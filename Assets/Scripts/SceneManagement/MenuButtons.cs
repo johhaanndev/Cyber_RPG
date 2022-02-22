@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
 {
+    private string directory;
+    private string songFolder;
+
+    private void Start()
+    {
+        directory = $"{Application.streamingAssetsPath}/Songs/";
+        songFolder = $"";
+    }
+
     public void LoadSongList()
     {
         SceneManager.LoadScene("SongList");
@@ -23,5 +32,10 @@ public class MenuButtons : MonoBehaviour
     public void LoadRanking()
     {
         Debug.Log("Load Ranking scene");
+    }
+
+    public void PlaySongPreview()
+    {
+        Debug.Log($"Song: {gameObject.name}");
     }
 }
