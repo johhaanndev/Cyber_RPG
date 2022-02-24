@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
 {
-    private string directory;
-    private string songFolder;
+    private SongTransferScript transferObject;
 
     private void Start()
     {
-        directory = $"{Application.streamingAssetsPath}/Songs/";
-        songFolder = $"";
+        transferObject = GameObject.Find("SongTransferObject").GetComponent<SongTransferScript>();
     }
 
     public void LoadSongList()
@@ -36,6 +35,6 @@ public class MenuButtons : MonoBehaviour
 
     public void PlaySongPreview()
     {
-        Debug.Log($"Song: {gameObject.name}");
+        transferObject.LoadAudioSource(gameObject.name);
     }
 }
