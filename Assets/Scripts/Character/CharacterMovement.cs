@@ -39,7 +39,6 @@ public class CharacterMovement : MonoBehaviour
     {
         if (!healthScript.GetIsDead() && !isWin)
         {
-            Debug.Log($"is character attacking? {attackScript.GetIsAttacking()}");
             if (!GetComponent<CharacterAttack>().GetIsDashing())
             {
                 Movement();
@@ -70,7 +69,6 @@ public class CharacterMovement : MonoBehaviour
                 }
                 else
                 {
-                Debug.Log("It should not be attacking");
                     transform.LookAt(new Vector3(playerSprite.position.x, 0f, playerSprite.position.z));
                 }
                 transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);

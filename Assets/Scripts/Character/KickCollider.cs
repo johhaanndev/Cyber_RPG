@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KickCollider : MonoBehaviour
 {
+
     public GameObject bulletReboundPrefab;
     public Transform positionToInstantiate;
 
@@ -12,6 +13,7 @@ public class KickCollider : MonoBehaviour
         if (other.CompareTag("BasicBullet"))
         {
             Destroy(other.gameObject);
+            gameObject.SetActive(false);
             var rebound = (GameObject)Instantiate(bulletReboundPrefab, positionToInstantiate.position, positionToInstantiate.rotation);
         }
     }

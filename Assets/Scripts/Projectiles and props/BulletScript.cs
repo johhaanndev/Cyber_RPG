@@ -8,7 +8,6 @@ public class BulletScript : MonoBehaviour
     private float shootForce;
 
     private Rigidbody rb;
-
     private CharacterAttack characterAttack;
 
     // Start is called before the first frame update

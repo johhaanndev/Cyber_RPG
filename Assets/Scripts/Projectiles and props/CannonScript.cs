@@ -31,7 +31,7 @@ public class CannonScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(rotation * Time.deltaTime);
+        //transform.Rotate(rotation * Time.deltaTime);
     }
 
     private List<float> LoadBeatsFromJson()
