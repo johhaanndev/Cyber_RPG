@@ -12,7 +12,7 @@ public class SongTransferScript : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "SongList")
         {
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);  
         }
     }
 

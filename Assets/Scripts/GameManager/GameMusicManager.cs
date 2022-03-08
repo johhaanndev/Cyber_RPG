@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameMusicManager : MonoBehaviour
 {
     // game objects references
-    public AudioSource songPlaying;
+    private AudioSource songPlaying;
     public GameObject gameplayUI;
     public GameObject winUI;
     public Text finalScoreText;
@@ -23,6 +23,8 @@ public class GameMusicManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        songPlaying = GameObject.Find("SongTransferObject").GetComponent<AudioSource>();
+
         songTime = songPlaying.clip.length;
         winUI.SetActive(false);
     }

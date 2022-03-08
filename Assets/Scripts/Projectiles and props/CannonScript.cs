@@ -21,6 +21,8 @@ public class CannonScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        musicPlayer = GameObject.Find("SongTransferObject");
+
         directory = $"{Application.streamingAssetsPath}/SongsData/";
         musicPlayer = GameObject.Find("MusicPlayer");
         songFolder = musicPlayer.GetComponent<AudioSource>().clip.name;
@@ -31,7 +33,7 @@ public class CannonScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.Rotate(rotation * Time.deltaTime);
+        transform.Rotate(rotation * Time.deltaTime);
     }
 
     private List<float> LoadBeatsFromJson()

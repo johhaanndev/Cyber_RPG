@@ -37,4 +37,16 @@ public class MenuButtons : MonoBehaviour
     {
         transferObject.LoadAudioSource(gameObject.name);
     }
+
+    public void LoadGameplay()
+    {
+        if (transferObject.GetComponent<AudioSource>().clip == null)
+        {
+            Debug.Log("No song loaded!");
+        }
+        else
+        {
+            SceneManager.LoadScene("GameplayScene");
+        }
+    }
 }
