@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MenuButtons : MonoBehaviour
 {
     private SongTransferScript transferObject;
+    public GameObject songPreviewButton;
 
     private void Start()
     {
@@ -40,13 +41,11 @@ public class MenuButtons : MonoBehaviour
 
     public void LoadGameplay()
     {
-        if (transferObject.GetComponent<AudioSource>().clip == null)
-        {
-            Debug.Log("No song loaded!");
-        }
-        else
-        {
-            SceneManager.LoadScene("GameplayScene");
-        }
+        transferObject.LoadAudioSource(songPreviewButton.name);
+        SceneManager.LoadScene("GameplayScene");
+
+        if (transferObject.GetComponent<AudioSource>().isPlaying)
+            transferObject.GetComponent<AudioSource>().Stop();
+
     }
 }

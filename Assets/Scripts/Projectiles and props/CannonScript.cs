@@ -7,6 +7,7 @@ public class CannonScript : MonoBehaviour
 {
     public Vector3 rotation;
 
+    private GameObject songTransferObject;
     private GameObject musicPlayer;
     public List<Transform> spawners;
 
@@ -21,11 +22,12 @@ public class CannonScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        musicPlayer = GameObject.Find("SongTransferObject");
-
+        songTransferObject = GameObject.Find("SongTransferObject");
+        if (GameObject.Find("SongTransferObject")) Debug.Log($"song transfer found: {songTransferObject.GetComponent<AudioSource>().clip.name}");
+        
         directory = $"{Application.streamingAssetsPath}/SongsData/";
         musicPlayer = GameObject.Find("MusicPlayer");
-        songFolder = musicPlayer.GetComponent<AudioSource>().clip.name;
+        songFolder = songTransferObject.GetComponent<AudioSource>().clip.name;
         kickSpawnTempo = LoadBeatsFromJson();
         StartCoroutine(nameof(SpawnKickBullets));
     }
@@ -38,7 +40,20 @@ public class CannonScript : MonoBehaviour
 
     private List<float> LoadBeatsFromJson()
     {
-        string filename = $"Kicks - {musicPlayer.GetComponent<AudioSource>().clip.name}.txt";
+        string filename;
+        if (gameObject.name.Contains("Kick"))
+        {
+            filename = $"kicks - {songTransferObject.GetComponent<AudioSource>().clip.name}.txt";
+        }
+        else if (gameObject.name.Contains("Fruity"))
+        {
+            filename = $"fruity - {songTransferObject.GetComponent<AudioSource>().clip.name}.txt";
+        }
+        else
+        {
+            Debug.LogError("Cannon not set. Name must contain the instrument to load.");
+            filename = "";
+        }
         string filePath = Path.Combine(directory, songFolder, filename);
         ClipData clip= new ClipData();
         string dataString;
