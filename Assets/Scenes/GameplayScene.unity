@@ -3124,6 +3124,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7007505771963299122, guid: 67cc352b7a0a2d44c8dbb86941e8ad03, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 517096301363268153, guid: fbb0c50908cd3ea4dab6a00e697fa472, type: 3}
     - target: {fileID: 8989637904984985049, guid: 67cc352b7a0a2d44c8dbb86941e8ad03, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -10244,6 +10248,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7007505771963299122, guid: 67cc352b7a0a2d44c8dbb86941e8ad03, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 517096301363268153, guid: fbb0c50908cd3ea4dab6a00e697fa472, type: 3}
     - target: {fileID: 8989637904984985049, guid: 67cc352b7a0a2d44c8dbb86941e8ad03, type: 3}
       propertyPath: m_Enabled
       value: 0
