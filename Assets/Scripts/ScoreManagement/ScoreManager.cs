@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public CharacterMovement character;
+    public CharacterManager character;
     public CharacterHealth characterHealth;
 
     private float gameplayScore;
@@ -15,7 +15,6 @@ public class ScoreManager : MonoBehaviour
     public Transform[] basketSpawns;
     public GameObject basketPrefab;
     public Text gameplayScoreText;
-    public Text finalScoreText;
 
     //Start is called before the first frame update
     void Start()

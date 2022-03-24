@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class CharacterMovement : MonoBehaviour
+public class CharacterManager : MonoBehaviour
 {
     private Rigidbody rb;
     private Animator anim;
     private CharacterAttack attackScript;
     private CharacterHealth healthScript;
+    private ScoreManager scoreManager;
 
     public GameObject kickCollider;
 
@@ -25,6 +27,10 @@ public class CharacterMovement : MonoBehaviour
 
     private bool isWin;
 
+    public Text finalScoreText;
+    public GameObject gameplayUI;
+    public GameObject winUI;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -32,6 +38,7 @@ public class CharacterMovement : MonoBehaviour
 
         attackScript = GetComponent<CharacterAttack>();
         healthScript = GetComponent<CharacterHealth>();
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -105,7 +112,17 @@ public class CharacterMovement : MonoBehaviour
     }
 
     // ******************* GETTER & SETTER *******************
-    public void SetIsWin(bool win) => isWin = win;
+    public void SetIsWin(bool win)
+    {
+        isWin = win;
+        if (win)
+        {
+            gameplayUI.SetActive(false);
+
+            finalScoreText.text = $"{scoreManager.GetGameplayScore()}";
+            winUI.SetActive(true);
+        }
+    }
 
     public bool GetIsWin() => isWin;
     // ***************** GETTER & SETTER END *****************

@@ -12,7 +12,7 @@ public class GameMusicManager : MonoBehaviour
     public Text finalScoreText;
     
     // scripts references
-    public CharacterMovement characterMovement;
+    public CharacterManager characterManager;
     public CharacterHealth characterHealth;
     public ScoreManager scoreManger;
 
@@ -26,7 +26,6 @@ public class GameMusicManager : MonoBehaviour
         songPlaying = GameObject.Find("SongTransferObject").GetComponent<AudioSource>();
 
         songTime = songPlaying.clip.length;
-        winUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -35,13 +34,9 @@ public class GameMusicManager : MonoBehaviour
         if (timer >= songTime && !characterHealth.GetIsDead())
         {
             
-            if (!characterHealth.GetIsDead())
+            if (!characterHealth.GetIsDead() && !characterManager.GetIsWin())
             {
-                characterMovement.SetIsWin(true);
-                gameplayUI.SetActive(false);
-
-                finalScoreText.text = $"{scoreManger.GetGameplayScore()}";
-                winUI.SetActive(true);
+                characterManager.SetIsWin(true);
             }
         }
         else
