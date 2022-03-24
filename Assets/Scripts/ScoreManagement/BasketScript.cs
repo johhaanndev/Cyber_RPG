@@ -6,9 +6,16 @@ public class BasketScript : MonoBehaviour
 {
     private ScoreManager scoreManager;
 
+    public Vector3 rotation;
+
     private void Start()
     {
         scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+    }
+
+    private void Update()
+    {
+        transform.Rotate(rotation * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)

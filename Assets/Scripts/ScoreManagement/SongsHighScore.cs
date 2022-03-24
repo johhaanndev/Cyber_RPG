@@ -67,10 +67,10 @@ public class SongsHighScore : MonoBehaviour
             }
         }
 
-        if (score > hsDict[$"Send {songName}"])
-            hsDict[$"Send {songName}"] = score;
+        if (score > hsDict[$"{songName}"])
+            hsDict[$"{songName}"] = score;
 
-        Debug.Log($"Dictionary well parsed? {hsDict[$"Send {songName}"]}");
+        Debug.Log($"Dictionary well parsed? {hsDict[$"{songName}"]}");
 
         hsStr = CreateString(hsDict);
         Debug.Log($"After setting score:\n{hsStr}");

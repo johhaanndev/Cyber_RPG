@@ -41,7 +41,7 @@ public class CharacterHealth : MonoBehaviour
 
     private void SubstractOne()
     {
-        currentHealth--;
+        //currentHealth--;
         if (currentHealth <= 0)
         {
             isDead = true;

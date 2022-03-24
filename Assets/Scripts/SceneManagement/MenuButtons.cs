@@ -7,11 +7,13 @@ using UnityEngine.SceneManagement;
 public class MenuButtons : MonoBehaviour
 {
     private SongTransferScript transferObject;
+    private SongsHighScore songsHighScore;
     public GameObject songPreviewButton;
 
     private void Start()
     {
         transferObject = GameObject.Find("SongTransferObject").GetComponent<SongTransferScript>();
+        songsHighScore = GameObject.Find("SongListObject").GetComponent<SongsHighScore>();
     }
 
     public void LoadSongList()
@@ -37,6 +39,7 @@ public class MenuButtons : MonoBehaviour
     public void PlaySongPreview()
     {
         transferObject.LoadAudioSource(gameObject.name);
+        Debug.Log($"Song top score: {gameObject.name} - {songsHighScore.hsDict[gameObject.name]}");
     }
 
     public void LoadGameplay()
