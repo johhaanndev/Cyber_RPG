@@ -6701,7 +6701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 147794827}
-  offset: {x: 0, y: 10.5, z: -3.75}
+  offset: {x: 0, y: 10.5, z: -5}
 --- !u!1 &966633393
 GameObject:
   m_ObjectHideFlags: 0
@@ -10972,7 +10972,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 147794828}
           m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-          m_MethodName: Attack
+          m_MethodName: EnableAttack
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

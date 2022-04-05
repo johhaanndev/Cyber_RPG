@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
 
     private bool isAttacking = false;
 
+    private float timerToAttack = 0;
+    private float limitTimer = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,29 +52,54 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector3(hor * moveForce, 0f, ver * moveForce);
 
-            transform.LookAt(walkingSprite.position);
+            if (!isAttacking)
+            {
+                transform.LookAt(walkingSprite.position);
+            }
             transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
         }
 
         walkingSprite.position = new Vector3(transform.position.x + hor, transform.position.y, transform.position.z + ver);
 
         if (Mathf.Abs(attackHor) > 0.25f || Mathf.Abs(attackVer) > 0.25f)
+        {
             attackSprite.position = new Vector3(transform.position.x + attackHor, transform.position.y, transform.position.z + attackVer);
+        }
         else
-            attackSprite.position = walkingSprite.position;
+        {
+            if (timerToAttack >= limitTimer)
+            {
+                timerToAttack = 0;
+                attackSprite.position = walkingSprite.position;
+            }
+            else
+            {
+                timerToAttack += Time.deltaTime;
+            }
+        }
 
         anim.SetFloat("Speed", rb.velocity.magnitude / moveForce);
-        Debug.Log(isAttacking);
     }
 
-    public void Attack()
+    public void EnableAttack()
     {
+        transform.LookAt(attackSprite.position);
+        anim.SetTrigger("isAttacking");
         isAttacking = true;
-        Invoke(nameof(StopAttacking), 1.0f);
     }
 
-    public void StopAttacking()
+    public void DisableAttack()
     {
         isAttacking = false;
+    }
+
+    public void EnableSwordCollider()
+    {
+        Debug.Log("Collider enabled");
+    }
+
+    public void DisableSwordCollider()
+    {
+        Debug.Log("Collider disabled");
     }
 }
