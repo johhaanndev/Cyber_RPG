@@ -8,6 +8,7 @@ public class PointerScript : MonoBehaviour
 
     public Joystick pointJoystick;
     public Transform spritePosition;
+    public Transform walkPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,10 @@ public class PointerScript : MonoBehaviour
         if (Mathf.Abs(hor) > 0.5f || Mathf.Abs(ver) > 0.5f)
         {
             spritePosition.position = new Vector3(hor + transform.position.x, 0.6f, ver + transform.position.z);
+        }
+        else
+        {
+            spritePosition.position = Vector3.zero;
         }
     }
 }

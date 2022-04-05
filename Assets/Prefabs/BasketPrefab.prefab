@@ -3810,7 +3810,7 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 1
+    enabled: 0
     ratio: 0.5
     light: {fileID: 3872752403283905407, guid: 1f04297c2f1f41e4e8ffdb9b0db6726e, type: 3}
     randomDistribution: 1
@@ -4799,7 +4799,7 @@ ParticleSystemRenderer:
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -8728,7 +8728,7 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 1
+    enabled: 0
     ratio: 0.5
     light: {fileID: 3872752403283905407, guid: 1f04297c2f1f41e4e8ffdb9b0db6726e, type: 3}
     randomDistribution: 1
@@ -13532,7 +13532,7 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 1
+    enabled: 0
     ratio: 0.5
     light: {fileID: 3872752403283905407, guid: 1f04297c2f1f41e4e8ffdb9b0db6726e, type: 3}
     randomDistribution: 1
@@ -18336,7 +18336,7 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 1
+    enabled: 0
     ratio: 0.5
     light: {fileID: 3872752403283905407, guid: 1f04297c2f1f41e4e8ffdb9b0db6726e, type: 3}
     randomDistribution: 1

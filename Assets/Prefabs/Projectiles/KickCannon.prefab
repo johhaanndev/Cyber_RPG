@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 1247579207110107139}
   - component: {fileID: 1247579207110107138}
   - component: {fileID: 913808482458491113}
+  - component: {fileID: 1790404560166625606}
   m_Layer: 0
   m_Name: KickCannon
   m_TagString: Untagged
@@ -168,7 +169,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247579207110107141}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39aff74535b0d99499afcd6372bb19a0, type: 3}
   m_Name: 
@@ -180,6 +181,25 @@ MonoBehaviour:
   - {fileID: 1247579207032846132}
   - {fileID: 1247579206414931369}
   kickSpawnTempo: []
+  bulletPrefab: {fileID: 517096301363268153, guid: 03a12fd69906f544a8051baa4542209b, type: 3}
+--- !u!114 &1790404560166625606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247579207110107141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb14fe5ab5fec2f42ab3878e58a2d767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotation: {x: 0, y: 10, z: 0}
+  spawners:
+  - {fileID: 1247579207611222124}
+  - {fileID: 1247579207221115132}
+  - {fileID: 1247579207032846132}
+  - {fileID: 1247579206414931369}
   bulletPrefab: {fileID: 517096301363268153, guid: 03a12fd69906f544a8051baa4542209b, type: 3}
 --- !u!1 &1247579207221115135
 GameObject:

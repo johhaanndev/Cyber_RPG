@@ -14,6 +14,8 @@ public class CharacterManager : MonoBehaviour
     public GameObject kickCollider;
 
     public Joystick moveJoystick;
+    public Joystick basicJoystick;
+    public Joystick dashJoystick;
 
     [SerializeField]
     private Transform playerSprite;
@@ -65,30 +67,30 @@ public class CharacterManager : MonoBehaviour
 
         playerSprite.position = new Vector3(hor + transform.position.x, transform.position.y, ver + transform.position.z);
 
-            if (Mathf.Abs(hor) > 0.05f || Mathf.Abs(ver) > 0.05f)
+        if (Mathf.Abs(hor) > 0.05f || Mathf.Abs(ver) > 0.05f)
+        {
+            rb.velocity = new Vector3(hor * moveForce, 0f, ver * moveForce);
+            if (attackScript.GetIsAttacking())
             {
-                rb.velocity = new Vector3(hor * moveForce, 0f, ver * moveForce);
-                if (attackScript.GetIsAttacking())
-                {
-                    //Debug.Log("Player is attacking");
-                    transform.LookAt(new Vector3(basicPointSprite.position.x, 0, basicPointSprite.position.z));
-                    transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
-                }
-                else
-                {
-                    transform.LookAt(new Vector3(playerSprite.position.x, 0f, playerSprite.position.z));
-                }
+                //Debug.Log("Player is attacking");
+                transform.LookAt(new Vector3(basicPointSprite.position.x, 0, basicPointSprite.position.z));
                 transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
             }
             else
             {
-                if (attackScript.GetIsAttacking())
-                {
-                    //Debug.Log("Player is attacking");
-                    transform.LookAt(new Vector3(basicPointSprite.position.x, 0, basicPointSprite.position.z));
-                    transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
-                }
+                transform.LookAt(new Vector3(playerSprite.position.x, 0f, playerSprite.position.z));
             }
+            transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
+        }
+        else
+        {
+            if (attackScript.GetIsAttacking())
+            {
+                //Debug.Log("Player is attacking");
+                transform.LookAt(new Vector3(basicPointSprite.position.x, 0, basicPointSprite.position.z));
+                transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
+            }
+        }
         anim.SetFloat("Speed", rb.velocity.magnitude / moveForce);
     }
 

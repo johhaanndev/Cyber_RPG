@@ -8,6 +8,9 @@ public class CharacterAttack : MonoBehaviour
     private bool isAttacking;
     private bool isDashing;
 
+    private float hor;
+    private float ver;
+
     private Animator anim;
 
     private void Start()
@@ -25,20 +28,15 @@ public class CharacterAttack : MonoBehaviour
 
     public void BasicAttack()
     {
+        Debug.Log($"Direction when joystick released: {hor}, {ver}");
         isAttacking = true;
         anim.SetTrigger("isAttacking");
     }
 
-    public void Dash()
-    {
-        isDashing = true;
-    }
+    public void Dash() => isDashing = true;
 
-    // temporary method
-    private void DisableAttack()
-    {
-        isAttacking = false;
-    } 
+    private void DisableAttack() => isAttacking = false;
+
     private void DisableDash() => isDashing = false;
 
     public bool GetIsAttacking() => isAttacking;

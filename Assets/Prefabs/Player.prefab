@@ -1944,7 +1944,7 @@ GameObject:
   - component: {fileID: 7219715220607446225}
   - component: {fileID: 7219715220607446226}
   m_Layer: 0
-  m_Name: Jammo_Player
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
