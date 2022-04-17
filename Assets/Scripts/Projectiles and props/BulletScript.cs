@@ -15,7 +15,8 @@ public class BulletScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * shootForce, ForceMode.Impulse);
-        characterAttack = GameObject.Find("Player").GetComponent<CharacterAttack>();    
+        //characterAttack = GameObject.Find("Player").GetComponent<CharacterAttack>();
+        characterAttack = GameObject.Find("PlayerWorkaround").GetComponent<CharacterAttack>();
     }
 
     // Update is called once per frame

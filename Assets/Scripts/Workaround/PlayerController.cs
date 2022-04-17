@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private Joystick attackJoystick;
     public Transform walkingSprite;
     public Transform attackSprite;
+    public GameObject kickCollider;
 
     [Header("Movement parameters")]
     public float moveForce;
@@ -95,11 +96,13 @@ public class PlayerController : MonoBehaviour
 
     public void EnableSwordCollider()
     {
+        kickCollider.SetActive(true);
         Debug.Log("Collider enabled");
     }
 
     public void DisableSwordCollider()
     {
+        kickCollider.SetActive(false);
         Debug.Log("Collider disabled");
     }
 }
