@@ -5206,6 +5206,7 @@ GameObject:
   - component: {fileID: 4358118843276334602}
   - component: {fileID: 4358118843276334603}
   - component: {fileID: 9205641348970206895}
+  - component: {fileID: 8698897937909174148}
   m_Layer: 0
   m_Name: PlayerWorkaround
   m_TagString: Untagged
@@ -5298,7 +5299,24 @@ MonoBehaviour:
   attackJoystick: {fileID: 0}
   walkingSprite: {fileID: 5882785696094942085}
   attackSprite: {fileID: 1355631604201493286}
+  kickCollider: {fileID: 0}
   moveForce: 10
+--- !u!114 &8698897937909174148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596560184590422843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879dbf9b91adf6a48861017002a3844b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  healthText: {fileID: 0}
+  loseUI: {fileID: 0}
+  controlsUI: {fileID: 0}
 --- !u!1 &7814734330297624867
 GameObject:
   m_ObjectHideFlags: 0

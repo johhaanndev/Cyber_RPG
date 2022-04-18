@@ -12,8 +12,8 @@ public class GameMusicManager : MonoBehaviour
     public Text finalScoreText;
     
     // scripts references
-    public CharacterManager characterManager;
-    public CharacterHealth characterHealth;
+    public PlayerController playerController;
+    public PlayerHealth playerHealth;
     public ScoreManager scoreManger;
 
     // paramteres
@@ -31,12 +31,12 @@ public class GameMusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer >= songTime && !characterHealth.GetIsDead())
+        if (timer >= songTime && !playerHealth.GetIsDead())
         {
             
-            if (!characterHealth.GetIsDead() && !characterManager.GetIsWin())
+            if (!playerHealth.GetIsDead() && !playerController.GetIsWin())
             {
-                characterManager.SetIsWin(true);
+                playerController.SetIsWin(true);
             }
         }
         else

@@ -22,6 +22,7 @@ public class BasketScript : MonoBehaviour
     {
         if (other.CompareTag("ReboundBullet"))
         {
+            Debug.Log("Hit byt rebound bullet");
             scoreManager.AddPointsOnGameplay(100);
             Destroy(other.gameObject);
             Destroy(gameObject);

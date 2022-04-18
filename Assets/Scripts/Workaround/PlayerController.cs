@@ -25,13 +25,15 @@ public class PlayerController : MonoBehaviour
     private float timerToAttack = 0;
     private float limitTimer = 0.5f;
 
+    private bool isWin = false;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
 
-        moveJoystick = GameObject.Find("MovementJoystick").GetComponent<Joystick>();
+        moveJoystick = GameObject.Find("MoveJoystick").GetComponent<Joystick>();
         attackJoystick = GameObject.Find("AttackJoystick").GetComponent<Joystick>();
     }
 
@@ -105,4 +107,8 @@ public class PlayerController : MonoBehaviour
         kickCollider.SetActive(false);
         Debug.Log("Collider disabled");
     }
+
+    public void SetIsWin(bool win) => isWin = win;
+
+    public bool GetIsWin() => isWin;
 }

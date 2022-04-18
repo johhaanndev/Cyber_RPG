@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public CharacterManager character;
-    public CharacterHealth characterHealth;
+    public PlayerController player;
+    public PlayerHealth playerHealth;
 
     private float gameplayScore;
     private int currentSpawn;
@@ -25,7 +25,7 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!character.GetIsWin() && !characterHealth.GetIsDead())
+        if (!player.GetIsWin() && !playerHealth.GetIsDead())
             gameplayScore += Time.deltaTime * 10;
         UpdateGameplayScore();
     }
