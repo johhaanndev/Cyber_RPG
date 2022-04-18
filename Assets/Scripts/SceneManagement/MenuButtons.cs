@@ -45,7 +45,7 @@ public class MenuButtons : MonoBehaviour
     public void LoadGameplay()
     {
         transferObject.LoadAudioSource(songPreviewButton.name);
-        SceneManager.LoadScene("GameplayScene");
+        SceneManager.LoadScene("Gameplay");
 
         if (transferObject.GetComponent<AudioSource>().isPlaying)
             transferObject.GetComponent<AudioSource>().Stop();
