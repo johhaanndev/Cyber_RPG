@@ -37,6 +37,7 @@ public class GameMusicManager : MonoBehaviour
             if (!playerHealth.GetIsDead() && !playerController.GetIsWin())
             {
                 playerController.SetIsWin(true);
+                winUI.SetActive(true);
             }
         }
         else

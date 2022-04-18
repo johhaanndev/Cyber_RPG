@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1251438760}
   m_Layer: 0
   m_Name: FruityBullet
-  m_TagString: ReboundBullet
+  m_TagString: BasicBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

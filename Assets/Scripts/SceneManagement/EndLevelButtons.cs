@@ -7,7 +7,7 @@ public class EndLevelButtons : MonoBehaviour
 {
     public void RestartLevel()
     {
-        SceneManager.LoadScene("GameplayScene");
+        SceneManager.LoadScene("Gameplay");
     }
 
     public void LoadSongListScene()
