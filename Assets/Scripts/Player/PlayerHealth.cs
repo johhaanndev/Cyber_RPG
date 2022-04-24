@@ -15,6 +15,8 @@ public class PlayerHealth : MonoBehaviour
     public GameObject loseUI;
     public GameObject controlsUI;
 
+    public GameObject hitFrame;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +43,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void SubstractOne()
     {
-        //currentHealth--;
+        currentHealth--;
+        var frame = (GameObject)Instantiate(hitFrame);
         if (currentHealth <= 0)
         {
             isDead = true;

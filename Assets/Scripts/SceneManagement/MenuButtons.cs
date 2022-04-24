@@ -21,21 +21,6 @@ public class MenuButtons : MonoBehaviour
         SceneManager.LoadScene("SongList");
     }
 
-    public void LoadConfiguration()
-    {
-        Debug.Log("Load configuration scene");
-    }
-
-    public void LoadSocial()
-    {
-        Debug.Log("Load social scene");
-    }
-
-    public void LoadRanking()
-    {
-        Debug.Log("Load Ranking scene");
-    }
-
     public void PlaySongPreview()
     {
         transferObject.LoadAudioSource(gameObject.name);
