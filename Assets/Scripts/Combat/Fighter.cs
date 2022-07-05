@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Game.Combat
 {
-    public class Fighter : MonoBehaviour
+    public class Fighter : MonoBehaviour, IAction
     {
         [SerializeField] float weaponRange = 2.0f;
         [SerializeField] float timeBetweenAttacks = 1.0f;
@@ -72,20 +72,20 @@ namespace Game.Combat
             return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
         }
 
-        //public bool CanAttack(GameObject combatTarget)
-        //{
-        //    if (combatTarget == null)
-        //        return false;
+        public bool CanAttack(GameObject combatTarget)
+        {
+            if (combatTarget == null)
+                return false;
 
-        //    Health targetToCheck = combatTarget.GetComponent<Health>();
-        //    return targetToCheck != null && !targetToCheck.IsDead();
-        //}
+            Health targetToCheck = combatTarget.GetComponent<Health>();
+            return targetToCheck != null && !targetToCheck.IsDead();
+        }
 
-        //public void Attack(GameObject combatTarget)
-        //{
-        //    GetComponent<ActionScheduler>().StartAction(this);
-        //    target = combatTarget.GetComponent<Health>();
-        //}
+        public void Attack(GameObject combatTarget)
+        {
+            GetComponent<ActionScheduler>().StartAction(this);
+            target = combatTarget.GetComponent<Health>();
+        }
 
         public void Cancel()
         {
