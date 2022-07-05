@@ -21,8 +21,8 @@ namespace Game.Control
             if (health.IsDead())
                 return;
 
-            //if (InteractWithCombat())
-            //    return;
+            if (InteractWithCombat())
+                return;
 
             if (InteractWithMovement())
                 return;
@@ -34,17 +34,19 @@ namespace Game.Control
             RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
             foreach (RaycastHit hit in hits)
             {
+                //Debug.Log($"{hit.transform.name}");
                 var target = hit.transform.GetComponent<CombatTarget>();
                 if (target == null)
                     continue;
 
-                //if (!GetComponent<Fighter>().CanAttack(target.gameObject))
-                //    continue;
 
-                //if (Input.GetMouseButton(1))
-                //{
-                //    GetComponent<Fighter>().Attack(target.gameObject);
-                //}
+                if (!GetComponent<Fighter>().CanAttack(target.gameObject))
+                    continue;
+
+                if (Input.GetMouseButton(1))
+                {
+                    GetComponent<Fighter>().Attack(target.gameObject);
+                }
                 return true;
             }
             return false;
