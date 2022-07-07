@@ -60,7 +60,7 @@ namespace Game.Control
             if (hasHit)
             {
                 if (Input.GetMouseButton(1))
-                    GetComponent<Mover>().StartMoveAction(hit.point);
+                    GetComponent<Mover>().StartMoveAction(hit.point, 1f);
                 return true;
             }
             return false;

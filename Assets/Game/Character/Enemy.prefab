@@ -7,13 +7,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 339514736, guid: b6d7aaac0dbf7d144b6418ad299320a5, type: 3}
+      propertyPath: m_Speed
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4235302202644889321, guid: b6d7aaac0dbf7d144b6418ad299320a5, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4235302202644889321, guid: b6d7aaac0dbf7d144b6418ad299320a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.1747265
       objectReference: {fileID: 0}
     - target: {fileID: 4235302202644889321, guid: b6d7aaac0dbf7d144b6418ad299320a5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4235302202644889321, guid: b6d7aaac0dbf7d144b6418ad299320a5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.0812197
       objectReference: {fileID: 0}
     - target: {fileID: 4235302202644889321, guid: b6d7aaac0dbf7d144b6418ad299320a5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -29,15 +33,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4235302202644889321, guid: b6d7aaac0dbf7d144b6418ad299320a5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4235302202644889321, guid: b6d7aaac0dbf7d144b6418ad299320a5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4235302202644889321, guid: b6d7aaac0dbf7d144b6418ad299320a5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4235302202644889321, guid: b6d7aaac0dbf7d144b6418ad299320a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -85,6 +89,24 @@ CapsuleCollider:
   m_Height: 1.569576
   m_Direction: 1
   m_Center: {x: 0, y: 0.7821816, z: 0}
+--- !u!114 &351835743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2270044509068443788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e290a2f3413c4594d9675cb0a87d242b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 5
+  suspicionTime: 3
+  patrolPath: {fileID: 0}
+  waypointTolerance: 1
+  waypointDwelTime: 1.5
+  patrolSpeedFraction: 0.33
 --- !u!114 &2233170158920404687
 MonoBehaviour:
   m_ObjectHideFlags: 0
