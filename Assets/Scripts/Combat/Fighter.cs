@@ -89,7 +89,6 @@ namespace Game.Combat
 
         public void Cancel()
         {
-            Debug.Log("Cancel Fighter");
             StopAttack();
             target = null;
             GetComponent<Mover>().Cancel();
