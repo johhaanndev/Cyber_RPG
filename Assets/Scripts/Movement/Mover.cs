@@ -42,6 +42,7 @@ namespace Game.Movement
 
         public void Cancel()
         {
+            Debug.Log("Cancel mover");
             navMeshAgent.isStopped = true;
         }
 
