@@ -11,7 +11,7 @@ namespace Game.SceneManagement
         {
             canvasGroup = GetComponent<CanvasGroup>();
 
-            StartCoroutine(FadeOutIt());
+            //StartCoroutine(FadeOutIt());
         }
 
         private IEnumerator FadeOutIt()
