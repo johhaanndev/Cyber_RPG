@@ -110,7 +110,7 @@ namespace Game.Control
         private void AttackBehaviour()
         {
             timeSinceLastSawPlayer = 0;
-            fighter.Attack(player);
+            fighter.Attack(player); 
         }
 
         private bool InAttackRangeOfPlayer()

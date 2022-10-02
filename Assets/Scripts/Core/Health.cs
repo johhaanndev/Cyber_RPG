@@ -24,7 +24,6 @@ namespace Game.Core
 
         private void Die()
         {
-
             if (isDead)
                 return;
 

@@ -29,6 +29,7 @@ namespace Game.Combat
 
             if (!GetIsInRange())
             {
+                Debug.Log("Not in rage");
                 GetComponent<Mover>().MoveTo(target.transform.position, 1f);
             }
             else
