@@ -1,13 +1,12 @@
 using Game.Core;
-using System.Collections;
-using System.Collections.Generic;
+using Game.Saving;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Game.Movement
 {
 
-    public class Mover : MonoBehaviour, IAction
+    public class Mover : MonoBehaviour, IAction, ISaveable
     {
         [SerializeField] Transform target;
         [SerializeField] float maxSpeed = 6f;
@@ -51,6 +50,16 @@ namespace Game.Movement
             Vector3 localVelocity = transform.InverseTransformDirection(velocity);
             float speed = localVelocity.z;
             GetComponent<Animator>().SetFloat("forwardSpeed", speed);
+        }
+
+        public object CaptureState()
+        {
+            return new SerializableVector3(transform.position);
+        }
+
+        public void RestoreState(object state)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

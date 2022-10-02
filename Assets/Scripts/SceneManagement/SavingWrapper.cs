@@ -7,6 +7,7 @@ namespace Game.SceneManagement
     public class SavingWrapper : MonoBehaviour
     {
         private const string defaultSaveFile = "save";
+
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.L))
